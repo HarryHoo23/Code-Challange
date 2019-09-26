@@ -189,13 +189,18 @@
     background: transparent;
     box-shadow: none;
     border: none;
-    padding-right: 30px;
+    padding: 10px 10px;
 }
 
-#lowest-price:focus {
+#lowest-price:focus,
+#all:focus,
+#highest-price:focus {
     border-top: 1px solid black;
-    padding-top: 10px;
+    text-decoration: none;
 }
+
+
+button:focus {outline:0;}
 
 .product-page{
     padding-top: 50px;
