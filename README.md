@@ -7,6 +7,9 @@ This Web Page is designed as *responsive page* so it fits all size devices.
 
 Visit the demo [here](https://harryhoo23.github.io/Code-Challange-2hats/).
 
+# Demo
+
+
 # Built With
 
 * HTML5
