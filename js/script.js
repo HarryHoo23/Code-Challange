@@ -6,16 +6,16 @@ $(function () {
     });
 });
 
-function onClick() {
+// function onClick() {
 
-    var item = $('.products-item-details p.price-tag')
+//     var item = $('.products-item-details p.price-tag')
 
-    items.sort(function (a, b) {
-        return +$(a).data('number') - +$(b).data('number');
-    });
+//     items.sort(function (a, b) {
+//         return +$(a).data('number') - +$(b).data('number');
+//     });
 
-    items.appendTo('.products');
-}
+//     items.appendTo('.products');
+// }
 
 
 
@@ -106,20 +106,85 @@ const ITEMS = [{
     },
 ];
 
+// The function to add all elements into the HTML
+function show() {
+    for (var i = 0; i < ITEMS.length; i++) {
+        var title = ITEMS[i].title;
+        document.getElementById("product-name-" + i).innerHTML = title;
+    }
 
+    for (var i = 0; i < ITEMS.length; i++) {
+        var price = ITEMS[i].price;
+        document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
+    }
 
-for (var i = 0; i < ITEMS.length; i++) {
-    var title = ITEMS[i].title;
-    document.getElementById("product-name-" + i).innerHTML = title;
+    for (var i = 0; i < ITEMS.length; i++) {
+        var url = ITEMS[i].image;
+        document.getElementsByClassName('img-responsive')[i].src = url;
+    }
 }
 
-for (var i = 0; i < ITEMS.length; i++) {
-    var price = ITEMS[i].price;
-    document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
-}
 
-for (var i = 0; i < ITEMS.length; i++){
-    var url = ITEMS[i].image;
-    document.getElementsByClassName('img-responsive')[i].src = url;
-}
- 
+$(function () {
+    show();
+})
+
+$(function () {
+    $('#all').click(function () {
+        show()
+    })
+})
+
+
+var newList = [...ITEMS];
+var lowList = [...ITEMS];
+
+// The Function to sort the items based on price from low to high
+
+$(function () {
+    lowList.sort(function (a, b) {
+        return parseFloat(a.price) - parseFloat(b.price);
+    });
+
+    $('#lowest-price').click(function () {
+        for (var i = 0; i < lowList.length; i++) {
+            var title = lowList[i].title;
+            document.getElementById("product-name-" + i).innerHTML = title;
+        }
+
+        for (var i = 0; i < lowList.length; i++) {
+            var price = lowList[i].price;
+            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
+        }
+
+        for (var i = 0; i < lowList.length; i++) {
+            var url = lowList[i].image;
+            document.getElementsByClassName('img-responsive')[i].src = url;
+        }
+    })
+})
+
+
+// The Function to sort the items based on price from high to low
+$(function () {
+    newList.sort(function (a, b) {
+        return parseFloat(b.price) - parseFloat(a.price);
+    });
+
+    $('#highest-price').click(function () {
+        for (var i = 0; i < newList.length; i++) {
+            var title = newList[i].title;
+            document.getElementById("product-name-" + i).innerHTML = title;
+        }
+
+        for (var i = 0; i < newList.length; i++) {
+            var price = newList[i].price;
+            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
+        }
+
+        for (var i = 0; i < newList.length; i++) {
+            var url = newList[i].image;
+            document.getElementsByClassName('img-responsive')[i].src = url;
+        }
+    })
+})
