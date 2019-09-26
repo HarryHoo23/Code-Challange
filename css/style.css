@@ -131,15 +131,19 @@
 .item-info{
     width: 100%;
     height: 100%;
-    padding: 100px 0;
+    padding: 45% 0;
 }
 
 .container {
     width: 100%;
 }
 
+.item {
+    position: relative;
+}
+
 .product-overlay{
-    background-color: rgba(240, 234, 238, .9);
+    background-color: rgba(250, 255, 255, .9);
     font-size: 15px;
     letter-spacing: 2px;
     position: absolute;
@@ -153,7 +157,7 @@
 }
 
 .item:hover .product-overlay {
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .whole-item{
@@ -188,7 +192,7 @@
     padding-right: 30px;
 }
 
-.sort-buttons .active{
+#lowest-price:focus {
     border-top: 1px solid black;
     padding-top: 10px;
 }
