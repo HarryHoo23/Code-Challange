@@ -86,21 +86,23 @@
     }
 
     .info {
-        top: -20px;
         display: inline-block;
         margin: 5px;
     }
 
     .categories{
-        top: -20px;
         display: inline-block;
         margin: 5px;
     }
 
     .follow{
-        top: 10px;
         display: inline-block;
         margin: 5px;
+    }
+
+    .all-info{
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 } 
 
@@ -154,6 +156,7 @@
 
     .all-info{
         margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .r-tabs-accordion-title {
