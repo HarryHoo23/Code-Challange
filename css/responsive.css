@@ -138,6 +138,10 @@
         left: 35px;
     }
 
+    .sort-buttons button{
+        width: 100%;
+    }
+
     .whole-item {
         min-height: 100px;
     }
