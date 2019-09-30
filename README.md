@@ -8,7 +8,7 @@ And this web is functional if you click **Lowest Price Or Highest Price or Most 
 The **tab bar** is also working if you click on the button.
 
 
-Visit the demo [here](https://harryhoo23.github.io/Code-Challange-2Hats/).
+Visit the demo [here](https://harryhoo23.github.io/Code-Challange-2Hats-new/).
 
 # Demo
 
