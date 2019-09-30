@@ -28,6 +28,18 @@
     .whole-item {
         min-height: 300px;
     }
+
+    .product-overlay {
+        font-size: 11px;
+    }
+
+    .product-item-details {
+        font-size: 10px;
+    }
+
+    #page1 {
+        margin-top: 10px;
+    }
 }
 
 /* Small Devices */
@@ -78,7 +90,7 @@
     }
 
     .whole-item {
-        min-height: 445px;
+        min-height: 435px;
     }
 
     .info {
@@ -99,6 +111,19 @@
     .all-info {
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    .product-overlay {
+        font-size: 11px;
+    }
+
+    .product-item-details {
+        padding-top: 5px;
+        font-size: 10px;
+    }
+
+    #page1 {
+        margin-top: 10px;
     }
 }
 
@@ -138,7 +163,7 @@
         left: 35px;
     }
 
-    .sort-buttons button{
+    .sort-buttons button {
         width: 100%;
     }
 
@@ -203,5 +228,18 @@
     #slogan h1,
     p {
         text-align: center;
+    }
+
+    .product-overlay {
+        font-size: 10px;
+    }
+
+    .product-item-details {
+        padding-top: 2px;
+        font-size: 8px;
+    }
+
+    #page1 {
+        margin-top: 0px;
     }
 }

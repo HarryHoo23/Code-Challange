@@ -6,19 +6,6 @@ $(function () {
     });
 });
 
-// function onClick() {
-
-//     var item = $('.products-item-details p.price-tag')
-
-//     items.sort(function (a, b) {
-//         return +$(a).data('number') - +$(b).data('number');
-//     });
-
-//     items.appendTo('.products');
-// }
-
-
-
 const ASSETS = {
     mockup: 'https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2FMockup.png?alt=media&token=86310acc-1373-44a9-a3c9-ddd0580f9b11',
     hero: 'https://firebasestorage.googleapis.com/v0/b/production2hats.appspot.com/o/studentPortal%2Fassessment-web-design%2Fhero.png?alt=media&token=83f29b93-3c2e-4e50-8641-0eda16a0d960',
@@ -106,21 +93,33 @@ const ITEMS = [{
     },
 ];
 
+
 // The function to add all elements into the HTML
 function show() {
     for (var i = 0; i < ITEMS.length; i++) {
         var title = ITEMS[i].title;
-        document.getElementById("product-name-" + i).innerHTML = title;
-    }
-
-    for (var i = 0; i < ITEMS.length; i++) {
         var price = ITEMS[i].price;
-        document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
-    }
-
-    for (var i = 0; i < ITEMS.length; i++) {
         var url = ITEMS[i].image;
-        document.getElementsByClassName('img-responsive')[i].src = url;
+        document.getElementById('page1').insertAdjacentHTML('beforeend', `
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 goods">
+        <div class="whole-item">
+            <div class="item">
+                <img src="${url}" class="img-responsive" alt="product">
+                <div class="product-overlay">
+                    <div class="item-info text-center">
+                        <p>Purchase product</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="product-item-details">
+                <p class="product-name">${title}</p>
+                <p class="price-tag" style="color: gray">$ ${price}.00</p>
+            </div>
+        </div>
+    </div>
+        
+        `)
     }
 }
 
@@ -131,10 +130,16 @@ $(function () {
 
 $(function () {
     $('#all').click(function () {
-        show()
+        for (var i = 0; i < ITEMS.length; i++) {
+            var title = ITEMS[i].title;
+            var url = ITEMS[i].image;
+            var price = ITEMS[i].price;
+            document.getElementsByClassName("product-name")[i].innerHTML = title;
+            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
+            document.getElementsByClassName('img-responsive')[i].src = url;
+        }
     })
 })
-
 
 var newList = [...ITEMS];
 var lowList = [...ITEMS];
@@ -149,16 +154,12 @@ $(function () {
     $('#lowest-price').click(function () {
         for (var i = 0; i < lowList.length; i++) {
             var title = lowList[i].title;
-            document.getElementById("product-name-" + i).innerHTML = title;
-        }
-
-        for (var i = 0; i < lowList.length; i++) {
             var price = lowList[i].price;
-            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
-        }
-
-        for (var i = 0; i < lowList.length; i++) {
             var url = lowList[i].image;
+            document.getElementsByClassName("product-name")[i].innerHTML = title;
+
+            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
+
             document.getElementsByClassName('img-responsive')[i].src = url;
         }
     })
@@ -174,16 +175,10 @@ $(function () {
     $('#highest-price').click(function () {
         for (var i = 0; i < newList.length; i++) {
             var title = newList[i].title;
-            document.getElementById("product-name-" + i).innerHTML = title;
-        }
-
-        for (var i = 0; i < newList.length; i++) {
-            var price = newList[i].price;
-            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
-        }
-
-        for (var i = 0; i < newList.length; i++) {
             var url = newList[i].image;
+            var price = newList[i].price;
+            document.getElementsByClassName("product-name")[i].innerHTML = title;
+            document.getElementsByClassName("price-tag")[i].innerHTML = "$ " + price + ".00";
             document.getElementsByClassName('img-responsive')[i].src = url;
         }
     })

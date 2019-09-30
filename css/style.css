@@ -135,12 +135,12 @@
     padding: 45% 0;
 }
 
-.container {
-    width: 100%;
-}
-
 .item {
     position: relative;
+}
+
+.whole-item {
+    min-height: 450px;
 }
 
 .product-overlay {
@@ -161,8 +161,8 @@
     opacity: 0.9;
 }
 
-.whole-item {
-    min-height: 500px;
+.product-item-details {
+    padding-top: 10px;
 }
 
 #content-tabs ul li {
@@ -212,4 +212,8 @@ button:focus {
 .all-info {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+#page1 {
+    margin-top: 40px;
 }
